@@ -240,9 +240,6 @@ body{
 .playlist .p_song:hover{
    background: #1C2833;
 }
-.playlist .p_song:hover button{
-	background: #FF5722;
-}
 
 .main .active_song{
 	background: #1C2833;
