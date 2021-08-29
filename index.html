@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>modern music player</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="fonts/fontawesome-free-5.15.1-web/css/all.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+
+	<div class="main">
+		
+		<!-- top bar -->
+		<div class="top_bar">
+			<button class="menu-left"><i class='bx bx-chevron-right'></i></button>
+			<div class="options">
+				<button><i class='bx bx-music' ></i></button>
+				<button id="volumn_icon">
+					<i class='bx bxs-volume-low' ></i>
+					<i class='bx bxs-volume-mute'></i>
+					<i class='bx bxs-volume-full' ></i>
+				</button>
+				<button id="like">
+					<!-- <i class='bx bx-edit-alt'></i> -->
+					<i class='bx bx-heart'></i>
+					<i class='bx bxs-heart'></i>
+				</button>
+			</div>
+			<button class="menu-right"><i class='bx bx-menu' ></i></i></button>
+		</div>
+
+        <!-- volumn -->
+        <div class="volume">
+            <input type="range" min="0" max="100" value="90" id="volume">  
+         </div>
+
+		<div class="playing_part">
+			<div class="img">
+				<img src="" id="img" alt="img">
+			</div>
+		</div>
+
+		<!-- control part -->
+		<div class="control_part">
+			<div class="song_title">
+				<p>song title</p>
+				<p>artist name</p>
+			</div>
+
+			<div class="control_buttons">
+				<div class="range_slider">
+					<input class="progress" type="range" min="0" max="100" id="slider" value="0">
+					<p>3:00</p>
+                    <audio id="audio" src="audio/TinhYeuKhungLong-FAY-6247040.mp3"></audio>
+				</div>
+
+				<div class="main_btns">
+                    <button id="random-btn"><i class="fas fa-random" style="font-size: 24px;"></i></button>
+					<button id="previous-btn"><i class='bx bx-skip-previous' ></i></button>
+					<button id="play_btn">
+                        <i class='bx bx-play icon-play' ></i>
+                        <i class='bx bx-pause icon-pause'></i>
+                    </button>
+					<button id="next-btn"><i class='bx bx-skip-next' ></i></button>
+                    <button id="repeat-btn"><i class='bx bx-repeat'></i></i></button>
+				</div>
+			</div>
+		</div>
+
+		<!-- playlist songs -->
+        <!-- active_song -->
+		<div class="playlist">
+			
+		</div>
+
+		<!-- lyric song -->
+		<div class="lyric">
+			<p class="text">1 2 3 mộng tình yêu tan ra.
+
+				Em ngồi đếm nỗi đau bên cạnh ly soda.
+				
+				Anh buồn không? Em rất buồn.
+				
+				Nhưng tại sao? Em chẳng thể hiểu.
+				
+				Anh đợi chi, anh đợi ai? Thế anh.
+				
+				Nhìn xa xăm, bên hiên nhà anh đang vô tư cười với ai?.
+				
+				Ôi tình yêu đơn phương thật rất mỏi mệt.
+				
+				Thế nên là.
+				
+				Em có nên nói ra những lời. 
+				
+				Sâu thẳm trong trái tim em.
+				
+				Một tình yêu siêu khủng long.
+				
+				Anh nói anh thích giản đơn.
+				
+				Vậy em cũng sẽ giản đơn.
+				
+				Miễn là anh yêu em.
+				
+				Miễn là anh bên em.
+				
+				Đơn giản và rất giản đơn.
+				
+				Tình yêu em như ly trà sữa trân châu.
+				
+				Ít trân châu, nhưng siêu to tình iu của em.
+				
+				Dốt toán nhưng em biết tính anh.
+				
+				Nhút nhát nhưng cũng biết nói yêu.
+				
+				Vậy nên yêu em nhé anh.
+				
+				Kỳ ghê ta? Ôi sao lần nào cũng thế.
+				
+				Không gặp anh một hôm thôi tưởng như cả năm.
+				
+				Là anh không thấy hay anh không hiểu ra vấn đề.
+				
+				Anh ngốc nghếch anh vô tâm với em.</p>
+		</div>
+	</div>
+
+	
+   <!--  javascript part -->
+	
+	<script src="js/main.js"></script>
+
+	<script>
+		var text = document.querySelector(".text").textContent;
+		var str = '', begin = 0, end = 0;
+		for(var i = 0;i<text.length;i++){
+			if(text[i]==='.'){
+				var tmp = "<span>" + text.slice(begin,i) + "</span>";
+				begin = i+2;
+				str = str + tmp
+				// break;
+			}
+		}
+		document.querySelector(".text").innerHTML =str
+
+	</script>
+</body>
+</html>
