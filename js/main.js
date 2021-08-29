@@ -36,7 +36,7 @@ const app = {
   isLiked: false,
   config: {},
   // (1/2) Uncomment the line below to use localStorage
-  // config: JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {},
+  config: JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {},
   songs: [
     {
       name: "Tình yêu khủng long",
@@ -114,7 +114,7 @@ const app = {
   setConfig: function (key, value) {
     this.config[key] = value;
     // (2/2) Uncomment the line below to use localStorage
-    // localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
+    localStorage.setItem(PlAYER_STORAGE_KEY, JSON.stringify(this.config));
   },
   render: function () {
     const htmls = this.songs.map((song, index) => {
@@ -349,7 +349,8 @@ const app = {
     cdThumb.src = `${this.currentSong.image}`;
     singer.textContent = this.currentSong.singer;
     audio.src = this.currentSong.path;
-    currentTime.textContent = '00:00';  
+    currentTime.textContent = '00:00'; 
+    recent_volume.onchange();
   },
   loadActiveSong: function () {
     var i = document.querySelectorAll(".p_song")
