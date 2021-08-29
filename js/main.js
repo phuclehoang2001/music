@@ -1,6 +1,3 @@
-// Một số bài hát có thể bị lỗi do liên kết bị hỏng. Vui lòng thay thế liên kết khác để có thể phát
-// Some songs may be faulty due to broken links. Please replace another link so that it can be played
-
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -39,16 +36,16 @@ const app = {
   config: JSON.parse(localStorage.getItem(PlAYER_STORAGE_KEY)) || {},
   songs: [
     {
-      name: "Tình yêu khủng long",
-      singer: "Fay",
-      path: "audio/TinhYeuKhungLong-FAY-6247040.mp3",
-      image: "img/1 (5).png",
-    },
-    {
       name: "Sau này, hãy gặp lại nhau khi hoa nở",
       singer: "Nguyên Hà",
       path: "audio/Nguyên Hà – Sau Này, Hãy Gặp Lại Nhau Khi Hoa Nở.mp3",
       image:"img/1 (2).jfif"
+    },
+    {
+      name: "Tình yêu khủng long",
+      singer: "Fay",
+      path: "audio/TinhYeuKhungLong-FAY-6247040.mp3",
+      image: "img/1 (5).png",
     },
     {
       name: "Hôm nay tôi buồn",
@@ -144,7 +141,7 @@ const app = {
     // Xử lý CD quay / dừng
     // Handle CD spins / stops
     const cdThumbAnimate = cdThumb.animate([{ transform: "rotate(360deg)" }], {
-      duration: 15000, // 10 seconds
+      duration: 15000, // 15 seconds
       iterations: Infinity
     });
     cdThumbAnimate.pause();
@@ -307,6 +304,7 @@ const app = {
 
 
     /// xử lí mở/ tắt menu
+    // Handling on / off menu
     optionLeft.onclick = function(){
         options.classList.toggle('active2');
         if(!options.classList.contains('active2')){
@@ -325,6 +323,7 @@ const app = {
     }
 
     //xử lí khi âm thanh audio thay đổi
+    // Handle volume change
     recent_volume.onchange = function () {
       audio.volume = recent_volume.value/100;
       if(audio.volume===0)
@@ -414,10 +413,6 @@ const app = {
        
     
 
-    // Hiển thị trạng thái ban đầu của button repeat & random
-    // Display the initial state of the repeat & random button
-    // randomBtn.classList.toggle("active", this.isRandom);
-    // repeatBtn.classList.toggle("active", this.isRepeat);
   }
 };
 

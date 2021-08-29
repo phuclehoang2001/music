@@ -35,7 +35,7 @@
 
 body{
 	min-height: 100vh;
-	background: #566573;
+	background: #f88a68;
 	display: grid;
 	place-items: center;
 }
@@ -43,8 +43,8 @@ body{
 	position: relative;
 	width: 400px;
 	height: 550px;
-	/* border-radius: 18px; */
-	background: #566573;
+	border-radius: 18px;
+	background: #f7a58c8c;
 	overflow: hidden;
 }
 .main .top_bar .options{
@@ -87,8 +87,14 @@ body{
 }
 
 
-.main .top_bar button:hover,.main .control_part .control_buttons .main_btns button:hover{
-	background: linear-gradient(to right, #ffc4b3, #f88a68) ; 
+.main .top_bar button:hover{
+	background: linear-gradient(to right, #ff3900, #f88a68) ; 
+	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.1) inset,
+	            0.1px 8px 8px 2px rgba(0,0,0,0.1);
+}
+
+.main .control_part .control_buttons .main_btns button:hover{
+	background:  #f7511f;
 	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.1) inset,
 	            0.1px 8px 8px 2px rgba(0,0,0,0.1);
 }
@@ -170,7 +176,7 @@ body{
 	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.2);
 }
 .main .control_part .control_buttons .main_btns #play_btn{
-	background: linear-gradient(to right, #ffc4b3, #f88a68);
+	background: #f7511f;
 	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.1) inset,
 	            0.1px 8px 8px 2px rgba(0,0,0,0.1);
 }
@@ -182,7 +188,7 @@ body{
 	z-index: 10;
 	width: 100%;
 	height: 100%;
-	background: #566573;
+	background: #f7a58c8c;
 	max-height: 0px;
 	overflow-y: auto;
 	transition: 0.5s;
@@ -238,11 +244,11 @@ body{
 	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.2);
 }
 .playlist .p_song:hover{
-   background: #1C2833;
+   background: rgba(28, 40, 51,0.6);
 }
 
 .main .active_song{
-	background: #1C2833;
+	background: rgba(28, 40, 51,0.6);
 	box-shadow: none;
 }
 
@@ -252,7 +258,7 @@ body{
 
 
 .playlist .active_song button{
-	background: linear-gradient(to right, #ffc4b3, #f88a68);
+	background: #f7511f;
 	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.2) inset,
 	            0.1px 8px 8px 2px rgba(0,0,0,0.2);
 }
@@ -363,9 +369,7 @@ input[type=range]::-webkit-slider-thumb{
 }
 
 .main_btns button.actives {
-    background: linear-gradient(to right, #ffc4b3, #f88a68) !important; 
-	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.2) inset,
-	            0.1px 8px 8px 2px rgba(0,0,0,0.2) !important;
+    background: #f7511f !important; 
 }
 
 .options #like .bxs-heart{
